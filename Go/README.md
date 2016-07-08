@@ -6,6 +6,7 @@ Golang study
 	- [Go Wiki](https://github.com/golang/go/wiki)
 	- [Effective Go](https://golang.org/doc/effective_go.html)   
 	- [Go 프로그래밍 입문](http://codingnuri.com/golang-book/)
+	- [Rob Pike - ‘Concurrency Is Not Parallelism’](https://www.youtube.com/watch?v=cN_DpYBzKso)
 
 ### Goal
 1. Go로 Embedded Application 작성 및 구동
@@ -17,6 +18,7 @@ Golang study
 	1. Reference 
 		- https://github.com/golang/go/wiki/GoArm
 		- http://embd.kidoman.io/
+		- http://dave.cheney.net/2015/09/04/building-go-1-5-on-the-raspberry-pi
 2. 다양한 알고리즘 문제들 Go로 풀어보기
 	1. [Hacker Rank](https://www.hackerrank.com/) 에서 Go로 연습
 	1. [Project Euler](https://projecteuler.net/) Go로 풀이

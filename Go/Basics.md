@@ -39,7 +39,6 @@ func something(dx, dy int) [][]uint8 {
 	- elem, ok = m[key]
 
 ### String
-
 - [efficeient string concatence](http://stackoverflow.com/questions/1760757/how-to-efficiently-concatenate-strings-in-go)
 
 ```Go
@@ -67,48 +66,12 @@ BenchmarkCopy    500000000  5.39  ns/op   0 B/op        0 allocs/op
 
 ## Function
 - Function is Full closures
-```go
-func adder() func(int) int {
-    sum := 0
-    return func(x int) int {
-        sum += x
-        return sum
-    }
-}
-``` 
 
-### Interface
-다른 클래스에 같은 기능이 있을 경우 interface로 묶는 개념, 상속과는 다르다
+## Method
+- Method receiver
+- 기본적으로 인터페이스에서 사용되는 메소드는 정의해두자.
+	- fmt로 출력할 때 : String() string
+	- error interface : Error() string
 
-```go
-import "fmt"
- 
-type Cat struct {
-}
- 
-type Dog struct {
-}
- 
-func (c Cat) Sound() {
-    fmt.Println("냐옹")
-}
- 
-func (d Dog) Sound() {
-    fmt.Println("멍멍")
-}
- 
-type Animal interface {
-    Sound()
-}
- 
-func main() {
-    var animal1 Animal
-    var animal2 Animal
- 
-    animal1 = Cat{}
-    animal2 = Dog{}
- 
-    animal1.Sound();
-    animal2.Sound();
-}
-```
+## Interface
+- 여러 Method를 묶어 하나의 Interface로 만들 수 있다.(http://go-book.appspot.com/interfaces.html)
