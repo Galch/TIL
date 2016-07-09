@@ -37,6 +37,7 @@ func something(dx, dy int) [][]uint8 {
 	- elem = m[key]
 	- delete(m, key)
 	- elem, ok = m[key]
+		- if elem, ok = m[key]; ok {} 로 사용할 수 있다.
 
 ### String
 - [efficeient string concatence](http://stackoverflow.com/questions/1760757/how-to-efficiently-concatenate-strings-in-go)
@@ -63,7 +64,9 @@ BenchmarkConcat  1000000    64497 ns/op   502018 B/op   0 allocs/op
 BenchmarkBuffer  100000000  15.5  ns/op   2 B/op        0 allocs/op
 BenchmarkCopy    500000000  5.39  ns/op   0 B/op        0 allocs/op
 ```
-
+- string empty check
+	- if len(s) > 0 { ... } [ref](http://stackoverflow.com/questions/18594330/the-best-way-to-test-for-an-empty-string-in-go)
+	
 ## Function
 - Function is Full closures
 
@@ -75,3 +78,22 @@ BenchmarkCopy    500000000  5.39  ns/op   0 B/op        0 allocs/op
 
 ## Interface
 - 여러 Method를 묶어 하나의 Interface로 만들 수 있다.(http://go-book.appspot.com/interfaces.html)
+
+## File I/O
+```go
+import (
+	"bufio"
+	"os"
+	"fmt"
+)
+
+func main() {
+	f, _ := os.Open(path)
+	scanner := bufio.NewScanner(f)
+
+	for scanner.Scan() {
+		line := scanner.Text()
+		fmt.Println(line)
+    }
+}
+```
