@@ -97,3 +97,13 @@ func main() {
     }
 }
 ```
+
+## Concurrency
+- Go routine
+- Channels
+	- `ch := make(chan int) / ch <- v / v := <-ch` int형 채널 생성 및 사용
+	- 채널 송/수신은 준비될 때까지 블록됨 -> 명시적인 lock없이 동기화 가능
+	- `i := range c` 처럼 쓰기 위해서는 채널을 close해야 함
+- Select
+	- 다수의 통신 동작으로부터 수행 준비 https://go-tour-kr.appspot.com/#67
+	- default는 수행 준비가 완료된 케이스가 없을 때 동작
